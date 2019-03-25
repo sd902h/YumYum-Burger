@@ -1,6 +1,28 @@
 // Import MySQL connection.
 var connection = require("./connection.js");
 
+// Helper function for generating MySQL syntax
+function printQuestionMarks(num) {
+  var arr = [];
+
+  for (var i = 0; i < num; i++) {
+    arr.push("?");
+  }
+
+  return arr.toString();
+}
+
+// Helper function for generating My SQL syntax
+function objToSql(ob) {
+  var arr = [];
+
+  for (var key in ob) {
+    arr.push(key + "=" + ob[key]);
+  }
+
+  return arr.toString();
+}
+
 // Object for all our SQL statement functions.
 var orm = {
   selectAll: function(tableInput, cb) {
@@ -32,7 +54,6 @@ var orm = {
       cb(result);
     });
   },
-  // An example of objColVals would be {name: panther, sleepy: true}
   updateOne: function(table, objColVals, condition, cb) {
     var queryString = "UPDATE " + table;
 
@@ -42,19 +63,6 @@ var orm = {
     queryString += condition;
 
     console.log(queryString);
-    connection.query(queryString, function(err, result) {
-      if (err) {
-        throw err;
-      }
-
-      cb(result);
-    });
-  },
-  deleteOne: function(table, condition, cb) {
-    var queryString = "DELETE FROM " + table;
-    queryString += " WHERE ";
-    queryString += condition;
-
     connection.query(queryString, function(err, result) {
       if (err) {
         throw err;
