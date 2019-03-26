@@ -1,40 +1,58 @@
-.burgerAvailable {
-  font-family: "Crafty Girls", cursive;
-  font-weight: normal;
-  font-size: 20px;
+body {
+  font-family: "Baloo Chettan", cursive;
   text-align: center;
-  border-radius: 25px;
-  width: 100%;
+  background-color: #fccb06;
+  font-size: 24px;
+}
+
+h1,
+h2 {
+  color: rgb(89, 4, 4);
+}
+
+img {
+  display: inline;
+}
+
+#burgersList {
+  display: inline-block;
+  width: 30%;
+  padding: 10px;
   margin: 10px;
-  padding: 10px;
-  background-color: #b7ffc2;
-  border: none;
 }
 
-.burgerEaten {
-  font-family: "Crafty Girls", cursive;
-  font-weight: normal;
+#burgersMenu {
+  float: left;
+}
+
+#burgersDevoured {
+  float: right;
+}
+
+li {
+  margin: 15px;
+}
+
+#burgersDevoured li {
+  background-color: gray;
+}
+
+button {
+  background-color: rgb(36, 186, 203);
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
   font-size: 20px;
-  text-align: center;
-  border-radius: 25px;
-  margin: 10px;
-  padding: 10px;
-  background-color: #ffd1c9;
 }
 
-.addBurgerButton {
-  font-family: "Crafty Girls", cursive;
-  font-weight: normal;
-  font-size: 20px;
-  text-align: center;
-  border-radius: 25px;
-  width: 100%;
-  margin: 0;
-  padding: 10px;
-  background-color: #ffc04c;
-  border: none;
+button:hover {
+  border-color: white;
+  border-width: 6px;
+  padding: 0;
 }
 
-.addBurgerButton:active {
-  background-color: #ffc04c;
+#burgerText {
+  width: 30%;
+  height: 20px;
+  margin-bottom: 10px;
 }

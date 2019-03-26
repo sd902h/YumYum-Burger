@@ -1,6 +1,6 @@
-INSERT INTO burgers_db.burgers
+INSERT INTO BurgersDB.burgers
     (burger_name, devoured)
 VALUES
-    ("Bacon Cheeseburger", true),
+    ("Bacon Cheeseburger", false),
     ("Veggie Cheeseburger", false),
-    ("Ranch Cheeseburger", true);
+    ("Ranch Cheeseburger", false);

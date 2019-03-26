@@ -1,69 +1,55 @@
-<h1>YumYum Burger!</h1>
+{{!-- <h1>YumYum Burger!</h1>
+<ul>
+    {{#each burgers}}
+    {{#unless devoured}}
+    {{> burgers/burger-block devoured=true}}
+    {{/unless}}
+    {{/each}}
+</ul>
 
-<h2>Burgers that are not devoured!</h2>
+<h2>Add a Burger</h2>
+<form class="create-form">
 
-<main>
-    <div class="container">
-        <div class="row">
-            <div class="col s6">
-                {{#each burgers}}
-                {{#unless this.devoured}}
-                <div>
-                    <form action="/api/burgers/{{this.id}}?_method=" PUT" method="POST">
-                        <button type="submit" class='burgerAvailable'> {{this.burger_name}}</button>
-                    </form>
-                </div>
-                {{/unless}}
-                {{/each}}
-            </div>
-
-            <div class="col s6">
-                {{#each burgers}}
-                {{#if this.devoured}}
-                <div class='burgerEaten'>
-                    <div>
-                        {{this.burger_name}}
-                    </div>
-                </div>
-                {{/if}}
-                {{/each}}
-            </div>
-        </div>
-    </div>
-    <h2>Add A Burger Option</h2>
-
-    <div class="row">
-        <div class="col s12">
-            <form action="/api/burgers" method="POST">
-                <input type="text" id="name" name="burger_name" placeholder="Uber Delicious Burger">
-                <button type="submit" class="addBurgerButton">Add The Burger</button>
-            </form>
-        </div>
+    <div class="form-group">
+        <label for="ca">Burger Name:</label>
+        <input type="text" id="ca" name="name">
     </div>
 
+    <div class="form-group">
+        <label for="devoured">Devoured?</label><br>
+        <input type="radio" name="devoured" value="1" checked> Devoured!<br>
+        <input type="radio" name="devoured" value="0"> Vacant
+    </div>
 
-    <ul>
+    <button type="submit">Add Burger</button>
+</form>
+</main> --}}
+
+<h1>YumYum Burger</h1>
+<img src="/assets/img/cute_burger.jpeg" alt="Burger">
+<br>
+<br>
+<div id="burgersList">
+    <ol id="burgersMenu">
+        <h2>Burgers</h2>
         {{#each burgers}}
         {{#unless devoured}}
-        {{> burgers/burger-block devoured=true}}
+        <li>{{burger_name}} <button class="devourBurger" data-newdevoured={{devoured}} data-id={{id}}>Devour it!</button></li>
         {{/unless}}
         {{/each}}
-    </ul>
+    </ol>
+    <ol id="burgersDevoured">
+        <h2>Devoured Burgers</h2>
+        {{#each burgers}}
+        {{#if devoured}}
+        <li>{{burger_name}}</li>
+        {{/if}}
+        {{/each}}
+    </ol>
+</div>
 
-    <h2>Add a Burger</h2>
-    <form class="create-form">
-
-        <div class="form-group">
-            <label for="ca">Burger Name:</label>
-            <input type="text" id="ca" name="name">
-        </div>
-
-        <div class="form-group">
-            <label for="devoured">Devoured?</label><br>
-            <input type="radio" name="devoured" value="1" checked> Devoured!<br>
-            <input type="radio" name="devoured" value="0"> Vacant
-        </div>
-
-        <button type="submit">Add Burger</button>
-    </form>
-</main>
+<form class="createBurger">
+    <input type="text" id="burgerText" name="burger_name">
+    <br>
+    <button type="submit">Add a Burger</button>
+</form>
