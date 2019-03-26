@@ -1,5 +1,5 @@
-CREATE DATABASE BurgersDB;
-USE BurgersDB;
+CREATE DATABASE ke7gk2by31czungw;
+USE ke7gk2by31czungw;
 
 CREATE TABLE burgers
 (
@@ -7,6 +7,7 @@ CREATE TABLE burgers
 	AUTO_INCREMENT,
 	burger_name varchar
 	(255) NOT NULL,
+    createdAt TIMESTAMP NOT NULL default current_timestamp,
 	devoured BOOLEAN DEFAULT FALSE,
 	PRIMARY KEY
 	(id)
