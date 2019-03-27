@@ -1,5 +1,5 @@
-CREATE DATABASE ke7gk2by31czungw;
-USE ke7gk2by31czungw;
+CREATE DATABASE BurgersDB;
+USE BurgersDB;
 
 CREATE TABLE burgers
 (
